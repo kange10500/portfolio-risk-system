@@ -1,0 +1,240 @@
+{
+  "market": {
+    "period": [
+      "2019-01-03",
+      "2024-12-30"
+    ],
+    "n_obs": 1434,
+    "ann_vol": 0.1626,
+    "skew": -1.083,
+    "excess_kurtosis": 16.13
+  },
+  "var_1d": {
+    "0.95": {
+      "historique": 1.45,
+      "normale": 1.648,
+      "student_t": 1.349,
+      "monte_carlo_normal": 1.654,
+      "monte_carlo_student_t": 1.354,
+      "cvar_historique": 2.531
+    },
+    "0.99": {
+      "historique": 2.877,
+      "normale": 2.346,
+      "student_t": 2.697,
+      "monte_carlo_normal": 2.347,
+      "monte_carlo_student_t": 2.69,
+      "cvar_historique": 4.548
+    }
+  },
+  "garch": {
+    "params": {
+      "mu": 0.0462,
+      "omega": 0.0182,
+      "alpha[1]": 0.0918,
+      "beta[1]": 0.8881,
+      "eta": 5.5493,
+      "lambda": -0.182
+    },
+    "persistence": 0.9799
+  },
+  "backtesting": {
+    "garch_skewt_95": {
+      "kupiec": {
+        "T": 1434,
+        "violations": 87,
+        "expected": 71.7,
+        "rate": 0.0607,
+        "LR": 3.227,
+        "p_value": 0.0724,
+        "reject_5pct": false
+      },
+      "christoffersen": {
+        "n00": 1272,
+        "n01": 74,
+        "n10": 74,
+        "n11": 13,
+        "LR": 9.534,
+        "p_value": 0.002,
+        "reject_5pct": true
+      }
+    },
+    "garch_normal_95": {
+      "kupiec": {
+        "T": 1434,
+        "violations": 90,
+        "expected": 71.7,
+        "rate": 0.0628,
+        "LR": 4.564,
+        "p_value": 0.0326,
+        "reject_5pct": true
+      },
+      "christoffersen": {
+        "n00": 1267,
+        "n01": 76,
+        "n10": 76,
+        "n11": 14,
+        "LR": 10.465,
+        "p_value": 0.0012,
+        "reject_5pct": true
+      }
+    },
+    "historique_constante_insample_95": {
+      "kupiec": {
+        "T": 1434,
+        "violations": 72,
+        "expected": 71.7,
+        "rate": 0.0502,
+        "LR": 0.001,
+        "p_value": 0.971,
+        "reject_5pct": false
+      }
+    },
+    "garch_skewt_99": {
+      "kupiec": {
+        "T": 1434,
+        "violations": 18,
+        "expected": 14.3,
+        "rate": 0.0126,
+        "LR": 0.873,
+        "p_value": 0.3501,
+        "reject_5pct": false
+      },
+      "christoffersen": {
+        "n00": 1397,
+        "n01": 18,
+        "n10": 18,
+        "n11": 0,
+        "LR": 0.458,
+        "p_value": 0.4986,
+        "reject_5pct": false
+      }
+    },
+    "garch_normal_99": {
+      "kupiec": {
+        "T": 1434,
+        "violations": 34,
+        "expected": 14.3,
+        "rate": 0.0237,
+        "LR": 19.658,
+        "p_value": 0.0,
+        "reject_5pct": true
+      },
+      "christoffersen": {
+        "n00": 1367,
+        "n01": 32,
+        "n10": 32,
+        "n11": 2,
+        "LR": 1.333,
+        "p_value": 0.2483,
+        "reject_5pct": false
+      }
+    },
+    "historique_constante_insample_99": {
+      "kupiec": {
+        "T": 1434,
+        "violations": 15,
+        "expected": 14.3,
+        "rate": 0.0105,
+        "LR": 0.03,
+        "p_value": 0.862,
+        "reject_5pct": false
+      }
+    },
+    "historique_glissante_250j_hors_echantillon_99": {
+      "kupiec": {
+        "T": 1184,
+        "violations": 22,
+        "expected": 11.8,
+        "rate": 0.0186,
+        "LR": 7.029,
+        "p_value": 0.008,
+        "reject_5pct": true
+      },
+      "christoffersen": {
+        "n00": 1143,
+        "n01": 18,
+        "n10": 18,
+        "n11": 4,
+        "LR": 12.336,
+        "p_value": 0.0004,
+        "reject_5pct": true
+      },
+      "violations_250_derniers_jours": 4,
+      "zone_bale_250_derniers_jours": "verte"
+    }
+  },
+  "credit": {
+    "data": "synthétique",
+    "n": 15000,
+    "default_rate": 0.0659,
+    "oracle_auc": 0.7101,
+    "models": {
+      "Régression logistique": {
+        "AUC": 0.698,
+        "Gini": 0.3959,
+        "KS": 0.2937,
+        "Brier": 0.0578,
+        "mean_pd": 0.0655,
+        "observed_rate": 0.0658
+      },
+      "Gradient boosting": {
+        "AUC": 0.684,
+        "Gini": 0.3681,
+        "KS": 0.304,
+        "Brier": 0.0589,
+        "mean_pd": 0.0657,
+        "observed_rate": 0.0658
+      }
+    },
+    "best": "Régression logistique",
+    "psi_train_vs_test": 0.0005,
+    "by_rating": {
+      "AA": {
+        "n": 20,
+        "pd_moy": 0.0085,
+        "ead": 479435.0,
+        "el": 1833.9891,
+        "taux_defaut_observe": 0.0
+      },
+      "A": {
+        "n": 336,
+        "pd_moy": 0.0161,
+        "ead": 5120276.0,
+        "el": 37236.4921,
+        "taux_defaut_observe": 0.0208
+      },
+      "BBB": {
+        "n": 1420,
+        "pd_moy": 0.0301,
+        "ead": 24452964.0,
+        "el": 332515.7579,
+        "taux_defaut_observe": 0.0303
+      },
+      "BB": {
+        "n": 1678,
+        "pd_moy": 0.0562,
+        "ead": 28204862.0,
+        "el": 712536.5372,
+        "taux_defaut_observe": 0.062
+      },
+      "B": {
+        "n": 734,
+        "pd_moy": 0.1069,
+        "ead": 12137208.0,
+        "el": 581975.2391,
+        "taux_defaut_observe": 0.0995
+      },
+      "CCC": {
+        "n": 312,
+        "pd_moy": 0.2365,
+        "ead": 5084861.0,
+        "el": 531031.2369,
+        "taux_defaut_observe": 0.2212
+      }
+    },
+    "el_total": 2197129.0,
+    "ead_total": 75479606.0,
+    "el_rate": 0.0291
+  }
+}

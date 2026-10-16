@@ -1,0 +1,11 @@
+numpy>=1.24
+pandas>=2.0
+scipy>=1.11
+arch>=6.3
+scikit-learn>=1.3
+matplotlib>=3.7
+openpyxl>=3.1
+pytest>=7
+nbformat
+nbclient
+ipykernel
